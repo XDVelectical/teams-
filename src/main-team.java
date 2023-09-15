@@ -10,8 +10,8 @@ import org.bukkit.scoreboard.Team;
 public class TeamPlugin extends JavaPlugin {
 
     private Scoreboard scoreboard;
-    private Team redTeam;
-    private Team blueTeam;
+    private Team RedTeam;
+    private Team BlueTeam;
 
     @Override
     public void onEnable() {
@@ -41,13 +41,13 @@ public class TeamPlugin extends JavaPlugin {
 
             String teamName = args[1].toLowerCase();
             if (!teamName.equals("red") && !teamName.equals("blue")) {
-                sender.sendMessage(ChatColor.RED + "Invalid team name. Available teams: Red, Blue.");
+                sender.sendMessage(ChatColor.RED + "Invalid team name, the Available teams are: Red, Blue.");
                 return true;
             }
 
             Team team = teamName.equals("red") ? redTeam : blueTeam;
             team.addEntry(player.getName());
-            sender.sendMessage(ChatColor.GREEN + "Player " + player.getName() + " joined the " + teamName + " team.");
+            sender.sendMessage(ChatColor.LIME + "Player " + player.getName() + " joined the " + teamName + " team.");
             return true;
         }
 
