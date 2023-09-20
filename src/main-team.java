@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
-
+ 
 public class TeamPlugin extends JavaPlugin {
 
     private Scoreboard scoreboard;
@@ -40,12 +40,12 @@ public class TeamPlugin extends JavaPlugin {
             }
 
             String teamName = args[1].toLowerCase();
-            if (!teamName.equals("red") && !teamName.equals("blue")) {
+            if (!teamName.equals("Red") && !teamName.equals("Blue")) {
                 sender.sendMessage(ChatColor.RED + "Invalid team name, the Available teams are: Red, Blue.");
                 return true;
             }
 
-            Team team = teamName.equals("red") ? redTeam : blueTeam;
+            Team team = teamName.equals("Red") ? RedTeam : BlueTeam;
             team.addEntry(player.getName());
             sender.sendMessage(ChatColor.LIME + "Player " + player.getName() + " joined the " + teamName + " team.");
             return true;
